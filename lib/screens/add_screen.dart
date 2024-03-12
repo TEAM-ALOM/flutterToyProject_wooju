@@ -12,7 +12,7 @@ class AddScreen extends StatelessWidget {
         backgroundColor: Colors.amber[200],
         foregroundColor: Colors.black,
         title: Text(
-          '오늘의 할일이 무엇인가요?',
+          'Add ToDo',
         ),
         actions: [
           IconButton(

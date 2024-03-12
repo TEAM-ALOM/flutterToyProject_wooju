@@ -45,16 +45,16 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             ToDoList(
-              title: '오늘의 할 일',
+              title: '오늘의 ToDo',
             ),
             ToDoList(
-              title: '일주일간의 해야할 일',
+              title: '일주일간의 ToDo',
             ),
             ToDoList(
-              title: '이번 달의 할 일',
+              title: '이번 달의 ToDo',
             ),
             ToDoList(
-              title: '지금 할 일',
+              title: '지금의 ToDo',
             ),
           ],
         ),

@@ -25,10 +25,10 @@ class _ToDoListState extends State<ToDoList> {
     return Column(
       children: [
         if (widget.isOpen)
-          Container(
-            height: 1.0,
-            width: 500.0,
+          Divider(
+            height: 10.0,
             color: Colors.black,
+            thickness: 0.5,
           ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,10 +59,10 @@ class _ToDoListState extends State<ToDoList> {
             'todotodotodo',
           ),
         if (widget.isOpen)
-          Container(
-            height: 1.0,
-            width: 500.0,
+          Divider(
+            height: 10.0,
             color: Colors.black,
+            thickness: 0.5,
           ),
       ],
     );
