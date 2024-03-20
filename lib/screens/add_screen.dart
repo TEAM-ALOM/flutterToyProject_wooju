@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:todolist/widgets/date_select_widget.dart';
 
 class AddScreen extends StatelessWidget {
-  const AddScreen({super.key});
+  final todoTextController = TextEditingController();
+
+  AddScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +42,9 @@ class AddScreen extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            TextField(),
+            TextField(
+              controller: todoTextController,
+            ),
             SizedBox(
               height: 40,
             ),
@@ -50,6 +55,7 @@ class AddScreen extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
+            DateSelect(),
             SizedBox(
               height: 40,
             ),
