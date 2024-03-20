@@ -4,6 +4,7 @@ import 'package:todolist/widgets/time_select_widget.dart';
 
 class AddScreen extends StatelessWidget {
   final todoTextController = TextEditingController();
+  final memoTextController = TextEditingController();
 
   AddScreen({super.key});
 
@@ -28,76 +29,103 @@ class AddScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 30,
-          vertical: 20,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              '할 일',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-              ),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 30,
+              vertical: 20,
             ),
-            TextField(
-              controller: todoTextController,
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Text(
-              '날 짜',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            DateSelect(),
-            SizedBox(
-              height: 40,
-            ),
-            Text(
-              '시 간',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
+                Text(
+                  '할 일',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                TextField(
+                  controller: todoTextController,
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Text(
+                  '날 짜',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                DateSelect(),
+                SizedBox(
+                  height: 40,
+                ),
+                Text(
+                  '시 간',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('시작 시간'),
-                    TimeSelect(),
+                    Column(
+                      children: [
+                        Text('시작 시간'),
+                        TimeSelect(),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text('종료 시간'),
+                        TimeSelect(),
+                      ],
+                    ),
                   ],
                 ),
-                Column(
-                  children: [
-                    Text('종료 시간'),
-                    TimeSelect(),
-                  ],
+                SizedBox(
+                  height: 40,
+                ),
+                Text(
+                  '메 모',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.black54,
+                    ),
+                  ),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 15,
+                    vertical: 5,
+                  ),
+                  width: double.infinity,
+                  height: 300,
+                  child: TextField(
+                    controller: memoTextController,
+                    minLines: null,
+                    maxLines: null,
+                    expands: true,
+                    decoration: InputDecoration(border: InputBorder.none),
+                  ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 40,
-            ),
-            Text(
-              '메 모',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
