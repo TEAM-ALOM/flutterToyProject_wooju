@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todolist/widgets/date_select_widget.dart';
+import 'package:todolist/widgets/time_select_widget.dart';
 
 class AddScreen extends StatelessWidget {
   final todoTextController = TextEditingController();
@@ -65,6 +66,26 @@ class AddScreen extends StatelessWidget {
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
               ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    Text('시작 시간'),
+                    TimeSelect(),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text('종료 시간'),
+                    TimeSelect(),
+                  ],
+                ),
+              ],
             ),
             SizedBox(
               height: 40,
